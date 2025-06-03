@@ -2,18 +2,17 @@ import React from "react";
 
 import ReactDOM from "react-dom/client";
 import Pet from "./Pet";
+import SearchParams from "./SearchParams";
 
 // App component using JSX
+// Root Component
 const App = () => {
   return (
     <div>
       <h1>"Adopt Me!"</h1>
-      <Pet name="Luna" animal="Dog" breed="Havanese" />
-      <Pet name="Pepper" animal="Bird" breed="Cockatiel" />
-      <Pet name="Doink" animal="Cat" breed="Mixed" />
-      <Pet name="Sushi" animal="Dog" breed="Shiba Inu" />
+      <SearchParams />
     </div>
-  )
+  );
 };
 // REACT DOM
 const container = document.getElementById("root");
