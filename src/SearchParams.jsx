@@ -1,16 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Pet from "./Pet";
+import useBreedList from "./useBreedList";
 
 const ANIMALS = ["Dog", "Cat", "Bird", "Rabbit", "Reptile"];
 
 const SearchParams = () => {
   console.log("My Search Params Component Rendered ");
-  const [location, setLocation] = useState("Seattle, WA");
+  const [location, setLocation] = useState("");
   const [animal,setAnimal]  =  useState("");
-  const [breed, setBreed] = useState("");
+  const [breed,setBreed] = useState("");
+  const [breeds, status] = useBreedList(animal);  
+  console.log(breeds);
   
-  const breeds = [];
-  // Next task to make an api call for the breeds based on the selected animal 
-
   return (
     <div className="search-params">
       <form>
