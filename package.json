@@ -18,8 +18,7 @@
     "eslint": "^8.24.0",
     "eslint-config-prettier": "^8.5.0",
     "prettier": "^2.7.1",
-    "vite": "^3.1.4",
-    "parcel":"^2.15.2"
+    "vite": "^3.1.4"
   },
   "dependencies": {
     "react": "^18.2.0",
