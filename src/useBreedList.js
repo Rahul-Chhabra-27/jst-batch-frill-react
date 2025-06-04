@@ -1,41 +1,27 @@
-// ! This is a custom hook to fetch the list of breeds from the Dog API
-// ! This is reusable hook similar to useState, useEffect, etc.
-
 import { useState, useEffect } from "react";
 
-const useBreedList = (animal) => {
-    const [breedList, setBreedList] = useState([]);
-    const [status,setStatus] = useState("unloaded");
-    
-    useEffect(() => {
-        // if there is no animal selected, return early
-        if(!animal) {
-            setBreedList([]);
-        }
-        else {
-            // if there is an animal selected, fetch the breeds based on the animal
-            fetchBreedsBasedOnAnimal();
-        }
-    },[animal])
-    async function fetchBreedsBasedOnAnimal() {
-     // fetching the breeds based on the animal
+export default function useBreedList(animal) {
+  const [breedList, setBreedList] = useState([]);
+  const [status, setStatus] = useState("unloaded");
 
-     setBreedList([]);
-     setStatus("loading");
-
-    const res = await fetch(
-      `http://pets-v2.dev-apis.com/breeds?animal=${animal}`
-    );
-    const json = await res.json();
-    console.log(json);
-    setBreedList(json.breeds || [])
-    setStatus("loaded");
+  useEffect(() => {
+    if (!animal) {
+      setBreedList([]);
+    } else {
+      requestBreedList();
     }
 
-    // state for tracking the status
-    // loading the breed, completed the fetching, or error occurred
+    async function requestBreedList() {
+      setBreedList([]);
+      setStatus("loading");
+      const res = await fetch(
+        `http://pets-v2.dev-apis.com/breeds?animal=${animal}`
+      );
+      const json = await res.json();
+      setBreedList(json.breeds || []);
+      setStatus("loaded");
+    }
+  }, [animal]);
 
-    return [breedList, status];
+  return [breedList, status];
 }
-
-export default useBreedList;
