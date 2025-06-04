@@ -5,7 +5,7 @@ const Pet = (props) => {
 
 
   return (
-    <a href="" className="pet">
+    <a href="/details/1" className="pet">
       <div className="image-container">
         <img src={images[0]} alt={name} />
       </div>
