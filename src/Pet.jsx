@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Pet = (props) => {
 
   // Array destructuring.
@@ -5,7 +7,7 @@ const Pet = (props) => {
 
 
   return (
-    <a href="/details/1" className="pet">
+    <Link to="/details" className="pet">
       <div className="image-container">
         <img src={images[0]} alt={name} />
       </div>
@@ -13,7 +15,7 @@ const Pet = (props) => {
         <h1>{name}</h1>
         <h2>{`${animal} - ${breed} - ${location}`}</h2>
       </div>
-    </a>
+    </Link>
   );
 };
 
