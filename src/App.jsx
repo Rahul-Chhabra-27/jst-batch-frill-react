@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import PetDetails from "./PetDetails";
 import RootLayout from "./RootLayout";
 import Details from './Details'
+import NotFound from "./ErrorPage";
 // App component using JSX
 // Root Component
 
@@ -15,6 +16,7 @@ const App = () => {
     { 
       path:"/",
       element:<RootLayout />,
+      errorElement:<NotFound />,
       children: [
         {path:"",element:<SearchParams></SearchParams> },
         {path:"/pets", element:<Details></Details>},

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Pet = (props) => {
   
   // Object destructuring.
-  const { name,animal,breed,images,location,id } = props;
+  const { name,animal,breed,images,location,id, removePet } = props;
   console.log(id);
   return (
     <Link to={`/pets/${id}`} className="pet" state={ { ...props } }>
@@ -15,6 +15,7 @@ const Pet = (props) => {
         <h1>{name}</h1>
         <h2>{`${animal} - ${breed} - ${location}`}</h2>
       </div>
+      <button onClick={() => removePet(id)}>Remove Me❌</button>
     </Link>
   );
 }; 

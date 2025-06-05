@@ -4,9 +4,8 @@ const Result = (props) => {
 
     
   // pets array.
-  const { pets } = props;
-  console.log("Result Component Rendered");
-  console.log(pets);
+  const { pets, removePet } = props;
+
   // conditional rendering.
   return (
     <div className="search">
@@ -22,6 +21,7 @@ const Result = (props) => {
               animal={pet.animal}
               breed={pet.breed}
               images={pet.images}
+              removePet = {removePet}
               location={`${pet.city}, ${pet.state}`}
             ></Pet>
           );

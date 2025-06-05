@@ -19,6 +19,22 @@ const SearchParams = () => {
     fetchPets();
   }, []);
 
+  const removePet = (id) => {
+    // previously my state contains pet with 7
+
+    // after I Have clicked the remove button to remove the pet with id 7
+
+    // 1. new Arrays and filter out the pet with id 7
+    // 2. setState(new Arrays)
+    // Allowed
+
+    const newPetsArray = pets.filter((pet) => pet.id != id);
+    console.log(newPetsArray);
+
+    // This is not allowed Reason => states are immutable, you vannot mutate the state
+    // State can't be modified, but it can changes by passing new data
+    // pets.remove(id); Mutating the state is not allowed.
+  }
   // Res ==> to fetch all the vavailable pets from the external api.
   async function fetchPets() {
     const res = await fetch(
@@ -79,7 +95,7 @@ const SearchParams = () => {
         <button onClick={(e) => handleLocation(e)}>Submit</button>
       </form>
 
-      <Result pets={pets} />
+      <Result pets={pets} removePet={removePet} />
     </div>
   );
 };
