@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Details = (props) => {
-    return <h1> Hii Pets </h1>
+    return <div> Hii from Pets Details Page </div>
 }
 
 export default Details;
