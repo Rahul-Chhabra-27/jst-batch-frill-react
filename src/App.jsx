@@ -7,6 +7,7 @@ import PetDetails from "./PetDetails";
 import RootLayout from "./RootLayout";
 import Details from './Details'
 import NotFound from "./ErrorPage";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 // App component using JSX
 // Root Component
 
@@ -28,8 +29,8 @@ const App = () => {
     <RouterProvider router={router}></RouterProvider>
   );
 };
-
+const queryClient = new QueryClient();
 // REACT DOM
 const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
-root.render(<App />);
+root.render( <QueryClientProvider client={queryClient}> <App /></QueryClientProvider>);

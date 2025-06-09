@@ -28,8 +28,8 @@ const SearchParams = () => {
     // 2. setState(new Arrays)
     // Allowed
 
-    const newPetsArray = pets.filter((pet) => pet.id != id);
-    console.log(newPetsArray);
+    // const newPetsArray = pets.filter((pet) => pet.id != id);
+    setPets((pets) => pets.filter((pet) => pet.id != id));
 
     // This is not allowed Reason => states are immutable, you vannot mutate the state
     // State can't be modified, but it can changes by passing new data

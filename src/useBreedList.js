@@ -1,8 +1,17 @@
+import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect } from "react";
 
+/*
+for animal dog ====> inside the cache {  [breeds,dog]:"List of all dog breeds",   }
+for animal cat ====> inside the cache {  [breeds,dog]:"List of all dog breeds",  [breeds,cat]:List<Cat Breeds> }
+*/
 export default function useBreedList(animal) {
   const [breedList, setBreedList] = useState([]);
   const [status, setStatus] = useState("unloaded");
+
+  useQuery({
+    queryKey:["breeds",animal]
+  })
 
   useEffect(() => {
     if (!animal) {

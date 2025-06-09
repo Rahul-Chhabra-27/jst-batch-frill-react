@@ -7,7 +7,7 @@ const Pet = (props) => {
   const { name,animal,breed,images,location,id, removePet } = props;
   console.log(id);
   return (
-    <Link to={`/pets/${id}`} className="pet" state={ { ...props } }>
+    <Link to={`/pets/${id}`} className="pet">
       <div className="image-container">
         <img src={images[0]} alt={name} />
       </div>
