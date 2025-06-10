@@ -1,5 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
-import SearchParams from "./SearchParams";
+
 
 const RootLayout = () => {
   return (
