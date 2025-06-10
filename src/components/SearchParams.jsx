@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import useBreedList from "../custom/useBreedList";
 import Result from "./Results";
+import { URL_PREFIX_BACKEND } from "../util/constant";
 
 const ANIMALS = ["dog", "cat", "bird", "rabbit", "reptile"];
 

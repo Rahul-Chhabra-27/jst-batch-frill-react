@@ -10,10 +10,6 @@ export default function useBreedList(animal) {
   const [breedList, setBreedList] = useState([]);
   const [status, setStatus] = useState("unloaded");
 
-  useQuery({
-    queryKey:["breeds",animal]
-  })
-
   useEffect(() => {
     if (!animal) {
       setBreedList([]);
