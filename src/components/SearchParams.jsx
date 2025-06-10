@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Pet from "./Pet";
 import useBreedList from "../custom/useBreedList";
 import Result from "./Results";
 
@@ -38,7 +37,7 @@ const SearchParams = () => {
   // Res ==> to fetch all the vavailable pets from the external api.
   async function fetchPets() {
     const res = await fetch(
-      `https://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
+      `${URL_PREFIX_BACKEND}/pets?animal=${animal}&location=${location}&breed=${breed}`
     );
     const json = await res.json();
     setPets(json.pets);

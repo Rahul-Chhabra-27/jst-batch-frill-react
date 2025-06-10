@@ -1,0 +1,1 @@
+export const URL_PREFIX_BACKEND = "https://pets-v2.dev-apis.com";

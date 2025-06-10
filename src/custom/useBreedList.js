@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect } from "react";
+import { URL_PREFIX_BACKEND } from "../util/constant";
 
 /*
 for animal dog ====> inside the cache {  [breeds,dog]:"List of all dog breeds",   }
@@ -24,7 +25,7 @@ export default function useBreedList(animal) {
       setBreedList([]);
       setStatus("loading");
       const res = await fetch(
-        `https://pets-v2.dev-apis.com/breeds?animal=${animal}`
+        `${URL_PREFIX_BACKEND}/breeds?animal=${animal}`
       );
       const json = await res.json();
       setBreedList(json.breeds || []);
