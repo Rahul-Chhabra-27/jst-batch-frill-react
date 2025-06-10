@@ -11,7 +11,7 @@ export const fetchPets = async (obj) => {
   const petId = queryKey[1];
   
   await wait(5000);
-  const apiRes = await fetch(`http://pets-v2.dev-apis.com/pets?id=${petId}`);
+  const apiRes = await fetch(`https://pets-v2.dev-apis.com/pets?id=${petId}`);
 
   if (!apiRes.ok) {
     throw new Error(`/pets/${petId} fetch not ok`);
