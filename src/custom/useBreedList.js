@@ -1,4 +1,3 @@
-import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect } from "react";
 import { URL_PREFIX_BACKEND } from "../util/constant";
 

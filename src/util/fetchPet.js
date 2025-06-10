@@ -1,3 +1,5 @@
+import { URL_PREFIX_BACKEND } from "./constant";
+
 const wait = (duration) => {
     return new Promise((resolve,reject) => {
         setTimeout(resolve,duration);
@@ -11,7 +13,7 @@ export const fetchPets = async (obj) => {
   const petId = queryKey[1];
   
   await wait(5000);
-  const apiRes = await fetch(`http://pets-v2.dev-apis.com/pets?id=${petId}`);
+  const apiRes = await fetch(`${URL_PREFIX_BACKEND}/pets?id=${petId}`);
 
   if (!apiRes.ok) {
     throw new Error(`/pets/${petId} fetch not ok`);
